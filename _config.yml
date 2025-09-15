@@ -1,0 +1,59 @@
+title: "Curiosity Processor Dev Blog"
+description: "Software Enginner exploring curiosities beyond"
+url: "https://curiosityprocessor.github.io"
+baseurl: ""
+repository: "https://github.com/curiosityprocessor/curiosityprocessor.github.io"
+
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "neon"
+
+search: true
+breadcrumb: true
+enable_copy_code_button: true
+
+author:
+  name: "Chanyoung Joo"
+  bio: "Software Enginner. From everything full stack to anything AI."
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/curiosityprocessor"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/chanyoung-joo"
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "mailto:curiosityprocessor@gmail.com"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  docs:
+    output: true
+    permalink: /docs/:path/
+
+defaults:
+  - scope:
+      path: ""            # all posts
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      toc: true           # per-post table of contents
+      toc_sticky: true
+  - scope:
+      path: ""            # all docs pages in /_docs
+      type: docs
+    values:
+      layout: single
+      author_profile: true
+      sidebar:
+        nav: "docs"       # uses _data/navigation.yml → docs:
+      toc: true
+      toc_sticky: true
+
+# Permalinks (helps breadcrumbs)
+permalink: /:categories/:title/
