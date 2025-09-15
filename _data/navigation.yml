@@ -1,0 +1,30 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Blog"
+    url: /blog/
+  - title: "Docs"
+    url: /docs/
+  - title: "Categories"
+    url: /categories/
+  - title: "Tags"
+    url: /tags/
+
+# Sidebar navigation used on docs pages
+docs:
+  - title: "Architecture"
+    url: /docs/architecture/
+    children:
+      - title: "Overview"
+        url: /docs/architecture/overview/
+      - title: "Service Boundaries"
+        url: /docs/architecture/boundaries/
+      - title: "Data Flow"
+        url: /docs/architecture/data-flow/
+  - title: "Playbooks"
+    url: /docs/playbooks/
+    children:
+      - title: "On-call"
+        url: /docs/playbooks/on-call/
+      - title: "Release"
+        url: /docs/playbooks/release/
