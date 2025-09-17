@@ -1,5 +1,5 @@
 title: "Curiosity Processor Dev Blog"
-description: "Software Enginner exploring curiosities beyond"
+description: "Software Engineer exploring curiosities beyond"
 url: "https://curiosityprocessor.github.io"
 baseurl: ""
 repository: "https://github.com/curiosityprocessor/curiosityprocessor.github.io"
@@ -17,7 +17,7 @@ enable_copy_code_button: true
 
 author:
   name: "Chanyoung Joo"
-  bio: "Software Enginner. From everything full stack to anything AI."
+  bio: "Software Engineer. From everything full stack to anything AI."
   links:
     - label: "GitHub"
       icon: "fab fa-github"
