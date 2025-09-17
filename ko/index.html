@@ -1,0 +1,36 @@
+---
+layout: home-filtered
+lang: ko
+locale: ko-KR
+permalink: /ko/
+author_profile: true
+entries_layout: list
+header:
+  overlay_filter: "0.5"
+  overlay_image: /assets/images/logo_longer.png
+excerpt: "호기심을 탐구하는 소프트웨어 엔지니어"
+intro: 
+  - excerpt: '풀스택 개발부터 AI 엔지니어링까지'
+feature_row:
+  - title: "소개"
+    excerpt: "프로필"
+    url: "/ko/about/"
+    btn_label: "보러가기"
+    btn_class: "btn--primary"
+  - title: "블로그"
+    excerpt: "기술 블로그"
+    url: "/ko/blog/"
+    btn_label: "보러가기"
+    btn_class: "btn--primary"
+  - title: "카테고리"
+    excerpt: "카테고리별 포스트 보기"
+    url: "/ko/categories/"
+    btn_label: "둘러보기"
+    btn_class: "btn--primary"
+---
+
+{% include feature_row id="intro" type="center" %}
+
+{% include feature_row %}
+
+{% include language-navigation.html %}

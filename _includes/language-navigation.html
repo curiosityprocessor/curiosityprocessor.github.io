@@ -1,0 +1,42 @@
+<!-- Language-aware navigation script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const pageLanguage = '{{ page.lang }}';
+  const navigation = {
+    'en': [
+      {title: 'Home', url: '/en/'},
+      {title: 'About', url: '/en/about/'},
+      {title: 'Blog', url: '/en/blog/'},
+      {title: 'Categories', url: '/en/categories/'},
+      {title: '한국어', url: '/ko/'}
+    ],
+    'ko': [
+      {title: '홈', url: '/ko/'},
+      {title: '소개', url: '/ko/about/'},
+      {title: '블로그', url: '/ko/blog/'},
+      {title: '카테고리', url: '/ko/categories/'},
+      {title: 'English', url: '/en/'}
+    ]
+  };
+
+  // Find the navigation container
+  const navContainer = document.querySelector('.visible-links');
+  if (navContainer && navigation[pageLanguage]) {
+    // Clear existing navigation
+    navContainer.innerHTML = '';
+    
+    // Add new navigation items
+    navigation[pageLanguage].forEach(function(item) {
+      const li = document.createElement('li');
+      li.className = 'masthead__menu-item';
+      
+      const a = document.createElement('a');
+      a.href = item.url;
+      a.textContent = item.title;
+      
+      li.appendChild(a);
+      navContainer.appendChild(li);
+    });
+  }
+});
+</script>

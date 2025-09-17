@@ -1,0 +1,36 @@
+---
+layout: home-filtered
+lang: en
+locale: en-US
+permalink: /en/
+author_profile: true
+entries_layout: list
+header:
+  overlay_filter: "0.5"
+  overlay_image: /assets/images/logo_longer.png
+excerpt: "Software Engineer exploring curiosities beyond"
+intro: 
+  - excerpt: 'From everything full stack to anything AI'
+feature_row:
+  - title: "About"
+    excerpt: "View my profile"
+    url: "/en/about/"
+    btn_label: "View"
+    btn_class: "btn--primary"
+  - title: "Blog Posts"
+    excerpt: "Read blog posts"
+    url: "/en/blog/"
+    btn_label: "View"
+    btn_class: "btn--primary"
+  - title: "Categories"
+    excerpt: "Browse posts by category"
+    url: "/en/categories/"
+    btn_label: "Browse"
+    btn_class: "btn--primary"
+---
+
+{% include feature_row id="intro" type="center" %}
+
+{% include feature_row %}
+
+{% include language-navigation.html %}

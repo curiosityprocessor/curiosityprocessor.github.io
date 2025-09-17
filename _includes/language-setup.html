@@ -1,0 +1,14 @@
+{% comment %}
+  Set locale based on page language
+{% endcomment %}
+
+{% if page.lang == 'ko' %}
+  {% assign site_locale = 'ko-KR' %}
+{% else %}
+  {% assign site_locale = 'en-US' %}
+{% endif %}
+
+{% comment %}
+  Make the locale available site-wide for this page
+{% endcomment %}
+{% assign site.locale = site_locale %}
