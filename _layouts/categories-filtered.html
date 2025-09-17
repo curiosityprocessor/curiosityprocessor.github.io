@@ -1,0 +1,47 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+{% assign filtered_posts = site.posts | where: "lang", page.lang %}
+{% assign categories_max = 0 %}
+{% for category in site.categories %}
+  {% assign category_posts = category[1] | where: "lang", page.lang %}
+  {% if category_posts.size > categories_max %}
+    {% assign categories_max = category_posts.size %}
+  {% endif %}
+{% endfor %}
+
+<ul class="taxonomy__index">
+  {% for i in (1..categories_max) reversed %}
+    {% for category in site.categories %}
+      {% assign category_posts = category[1] | where: "lang", page.lang %}
+      {% if category_posts.size == i %}
+        <li>
+          <a href="#{{ category[0] | slugify }}">
+            <strong>{{ category[0] }}</strong> <span class="taxonomy__count">{{ category_posts.size }}</span>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</ul>
+
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+{% for i in (1..categories_max) reversed %}
+  {% for category in site.categories %}
+    {% assign category_posts = category[1] | where: "lang", page.lang %}
+    {% if category_posts.size == i %}
+      <section id="{{ category[0] | slugify | downcase }}" class="taxonomy__section">
+        <h2 class="archive__subtitle">{{ category[0] }}</h2>
+        <div class="entries-{{ entries_layout }}">
+          {% for post in category_posts %}
+            {% include archive-single.html type=entries_layout %}
+          {% endfor %}
+        </div>
+        <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: "Back to Top" }} &uarr;</a>
+      </section>
+    {% endif %}
+  {% endfor %}
+{% endfor %}

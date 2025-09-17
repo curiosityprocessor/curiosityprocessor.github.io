@@ -5,7 +5,11 @@ baseurl: ""
 repository: "https://github.com/curiosityprocessor/curiosityprocessor.github.io"
 
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "neon"
+minimal_mistakes_skin: "dark"
+
+# Internationalization
+locale: "en-US"
+# Available locales: en-US, ko-KR
 
 search: true
 breadcrumb: true
@@ -29,6 +33,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-include-cache
 
 collections:
   docs:
@@ -45,7 +50,7 @@ defaults:
       toc: true           # per-post table of contents
       toc_sticky: true
   - scope:
-      path: ""            # all docs pages in /_docs
+      path: ""            # all docs pages in /docs
       type: docs
     values:
       layout: single
@@ -54,6 +59,14 @@ defaults:
         nav: "docs"       # uses _data/navigation.yml → docs:
       toc: true
       toc_sticky: true
+  - scope:
+      path: "en"          # English pages
+    values:
+      lang: en
+  - scope:
+      path: "ko"          # Korean pages  
+    values:
+      lang: ko
 
 # Permalinks (helps breadcrumbs)
 permalink: /:categories/:title/

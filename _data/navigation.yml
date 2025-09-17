@@ -1,30 +1,35 @@
 main:
   - title: "Home"
-    url: /
+    url: /en/
+  - title: "About"  
+    url: /en/about/
   - title: "Blog"
-    url: /blog/
-  - title: "Docs"
-    url: /docs/
+    url: /en/blog/
   - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
+    url: /en/categories/
+  - title: "한국어"
+    url: /ko/
 
-# Sidebar navigation used on docs pages
-docs:
-  - title: "Architecture"
-    url: /docs/architecture/
-    children:
-      - title: "Overview"
-        url: /docs/architecture/overview/
-      - title: "Service Boundaries"
-        url: /docs/architecture/boundaries/
-      - title: "Data Flow"
-        url: /docs/architecture/data-flow/
-  - title: "Playbooks"
-    url: /docs/playbooks/
-    children:
-      - title: "On-call"
-        url: /docs/playbooks/on-call/
-      - title: "Release"
-        url: /docs/playbooks/release/
+en:
+  - title: "Home"
+    url: /en/
+  - title: "About"
+    url: /en/about/
+  - title: "Blog"
+    url: /en/blog/
+  - title: "Categories"
+    url: /en/categories/
+  - title: "한국어"
+    url: /ko/
+
+ko:
+  - title: "홈"
+    url: /ko/
+  - title: "소개"
+    url: /ko/about/
+  - title: "블로그"
+    url: /ko/blog/
+  - title: "카테고리"
+    url: /ko/categories/
+  - title: "English"
+    url: /en/

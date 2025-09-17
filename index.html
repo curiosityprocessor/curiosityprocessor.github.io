@@ -1,0 +1,43 @@
+---
+layout: single
+title: "Choose Language / 언어 선택"
+permalink: /
+author_profile: true
+---
+
+<div style="text-align: center; margin-top: 2em;">
+  <h2>Welcome to my dev blog</h2>
+  <p>Please choose your preferred language</p>
+  
+  <div style="margin: 2em 0;">
+    <a href="/en/" class="btn btn--primary btn--large" style="margin: 0.5em;">
+      🇬🇧 English
+    </a>
+    <a href="/ko/" class="btn btn--primary btn--large" style="margin: 0.5em;">
+      🇰🇷 한국어
+    </a>
+  </div>
+  
+  <hr style="margin: 2em 0;">
+  
+  <h2>개발 블로그에 오신 것을 환영합니다</h2>
+  <p>원하시는 언어를 선택해 주세요</p>
+</div>
+
+<script>
+// Auto-redirect based on browser language preference
+(function() {
+  const lang = navigator.language || navigator.userLanguage;
+  const isKorean = lang.startsWith('ko');
+  const hasVisited = localStorage.getItem('curiosity_processor_visited');
+  
+  if (!hasVisited) {
+    localStorage.setItem('curiosity_processor_visited', 'true');
+    if (isKorean) {
+      window.location.href = '/ko/';
+    } else {
+      window.location.href = '/en/';
+    }
+  }
+})();
+</script>
