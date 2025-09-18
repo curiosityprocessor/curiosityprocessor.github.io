@@ -1,0 +1,118 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+// Custom CSS to expand content width
+.page {
+  .page__inner-wrap {
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    clear: both;
+    
+    .page__content {
+      float: left;
+      width: calc(100% - 260px); // Much wider content area
+      margin-left: 0;
+      margin-right: 240px; // Reduced space for sidebar
+      
+      @include breakpoint($large) {
+        float: left;
+        width: calc(100% - 260px);
+        margin-right: 240px;
+      }
+      
+      @include breakpoint($x-large) {
+        width: calc(100% - 260px);
+        margin-right: 240px;
+      }
+    }
+    
+    .page__meta {
+      margin: 0 0 4px;
+      color: mix(#fff, $muted-text-color, 25%);
+    }
+  }
+}
+
+// Expand main content area width specifically for posts and filtered layouts
+.layout--single, .layout--single-multilingual, .layout--home-filtered, .layout--posts-filtered, .layout--categories-filtered, .layout--tags-filtered {
+  .page__inner-wrap {
+    @include breakpoint($large) {
+      .page__content {
+        width: calc(100% - 20px); // Maximum width for all layout types
+        margin-right: 20px;
+      }
+    }
+    
+    @include breakpoint($x-large) {
+      .page__content {
+        width: calc(100% - 20px);
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+// Adjust sidebar width accordingly
+.sidebar {
+  @include breakpoint($large) {
+    float: left;
+    width: calc(260px - 1em); // Much smaller sidebar for maximum content width
+    opacity: 0.75;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+  @include breakpoint($x-large) {
+    width: calc(240px - 1em);
+  }
+}
+
+// Adjust font sizes for better content density
+.page__content {
+  p {
+    font-size: 0.8em; // Smaller paragraph font size
+    line-height: 1.6; // Maintain good readability with proper line spacing
+  }
+  
+  li, dl {
+    font-size: 0.8em; // Also apply to lists for consistency
+  }
+}
+
+.masthead__menu-item {
+  font-size: 0.8em; // Smaller navigation text
+}
+
+// Ensure code blocks utilize the full width
+.highlight {
+  margin: 0 0 1em;
+}
+
+pre.highlight {
+  overflow-x: auto;
+}
+
+// Adjust archive (blog listing) pages too
+.archive {
+  .page__content {
+    @include breakpoint($large) {
+      width: calc(100% - 240px);
+      margin-right: 220px;
+    }
+    
+    @include breakpoint($x-large) {
+      width: calc(100% - 240px);
+      margin-right: 220px;
+    }
+  }
+}
