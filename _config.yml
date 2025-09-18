@@ -45,7 +45,7 @@ defaults:
       path: ""            # all posts
       type: posts
     values:
-      layout: single
+      layout: single-multilingual
       author_profile: true
       toc: true           # per-post table of contents
       toc_sticky: true
